@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-   public class EfExperinceDal : GenericRepository<Experience>, IExperienceDal
+   public class EfExperienceDal : GenericRepository<Experience>, IExperienceDal
     {
     }
 }
