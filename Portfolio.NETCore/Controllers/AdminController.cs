@@ -16,5 +16,21 @@ namespace Portfolio.NETCore.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialTopNavbar()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScript()
+        {
+            return PartialView();
+        }
     }
 }
