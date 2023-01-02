@@ -35,7 +35,7 @@ namespace Portfolio.NETCore.Controllers
             m.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             m.Status = true;
             messageManager.TAdd(m);
-            return PartialView();
+            return PartialView("Index");
         }
     }
 }
