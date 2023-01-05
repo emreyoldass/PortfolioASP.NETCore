@@ -32,5 +32,9 @@ namespace Portfolio.NETCore.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult NavigationPartial()
+        {
+            return PartialView();
+        }
     }
 }

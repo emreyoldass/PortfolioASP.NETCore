@@ -24,7 +24,6 @@
             {
                 <tr>
                     <th scope="row">
-
                         <div class="media-body">
                             <span class="name mb-0 text-sm">@item.SkillID</span>
                         </div>
@@ -43,15 +42,15 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn btn-danger">Sil</button>
+                       <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a>
                     </td>
                     <td>
-                        <button class="btn btn-success">Güncelle</button>
+                        <a href="/Skill/EditSkill/@item.SkillID" class="btn btn-success">Güncelle</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
     <br />
-    <a href="#" class="btn btn-primary float-right">Yeni Yetenek Ekle</a>
+    <a href="/Skill/AddSkill/" class="btn btn-primary float-right">Yeni Yetenek Ekle</a>
 </div>
