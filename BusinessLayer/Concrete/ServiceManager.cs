@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
             return _serviceDal.GetList() ;
         }
 
-        public Service TGetVyID(int id)
+        public Service TGetByID(int id)
         {
             return _serviceDal.GetByID(id);
         }

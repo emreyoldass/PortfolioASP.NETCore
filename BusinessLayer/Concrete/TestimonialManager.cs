@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
            return _testimonialDal.GetList();
         }
 
-        public Testimonial TGetVyID(int id)
+        public Testimonial TGetByID(int id)
         {
             return _testimonialDal.GetByID(id);
         }

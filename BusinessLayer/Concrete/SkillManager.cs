@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
            return _skillDal.GetList();
         }
 
-        public Skill TGetVyID(int id)
+        public Skill TGetByID(int id)
         {
             return _skillDal.GetByID(id);
         }

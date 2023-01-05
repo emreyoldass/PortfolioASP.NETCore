@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
             return _contactDal.GetList();
         }
 
-        public Contact TGetVyID(int id)
+        public Contact TGetByID(int id)
         {
             throw new NotImplementedException();
         }

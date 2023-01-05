@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
             return _experienceDal.GetList();
         }
 
-        public Experience TGetVyID(int id)
+        public Experience TGetByID(int id)
         {
             return _experienceDal.GetByID(id);
         }

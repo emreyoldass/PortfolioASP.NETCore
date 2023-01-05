@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
           return _portfolioDal.GetList();
         }
 
-        public Portfolio TGetVyID(int id)
+        public Portfolio TGetByID(int id)
         {
             return _portfolioDal.GetByID(id);
         }

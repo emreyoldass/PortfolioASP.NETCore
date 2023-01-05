@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
            return _featureDal.GetList();
         }
 
-        public Feature TGetVyID(int id)
+        public Feature TGetByID(int id)
         {
             return _featureDal.GetByID(id);
         }

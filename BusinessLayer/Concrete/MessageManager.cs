@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public Message TGetVyID(int id)
+        public Message TGetByID(int id)
         {
             throw new NotImplementedException();
         }
