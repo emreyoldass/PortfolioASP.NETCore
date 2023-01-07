@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h1>Proje Ekleme  Sayfası</h1>
+    @using (Html.BeginForm("AddExperience", "Experience", FormMethod.Post))
+    {
+        @Html.Label("Proje Başlığı")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Görsel 1")
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Görsel 2")
+        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+        <br />
+        @Html.Label("Proje Url")
+        @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+        <br />
+        @Html.Label("PLatform")
+        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ücret")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.Label("Status")
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />
+        @Html.Label("Tamamlanma Oranı")
+        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary"> Kaydet </button>
+    }
+</div>
+
+
+
