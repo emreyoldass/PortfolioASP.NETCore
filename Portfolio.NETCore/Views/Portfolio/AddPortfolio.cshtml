@@ -6,13 +6,15 @@
 
 <div class="card-header border-0">
     <h1>Proje Ekleme  Sayfası</h1>
-    @using (Html.BeginForm("AddExperience", "Experience", FormMethod.Post))
+    @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
     {
         @Html.Label("Proje Başlığı")
         @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
         <br />
         @Html.Label("Görsel 1")
         @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ImageUrl)
         <br />
 
         @Html.Label("Görsel 2")
@@ -26,6 +28,7 @@
         <br />
         @Html.Label("Ücret")
         @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Price)
         <br />
         @Html.Label("Status")
         @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
