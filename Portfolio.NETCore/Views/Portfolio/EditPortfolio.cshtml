@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h1>Proje Düzenleme Sayfası </h1>
+    @using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.PortfolioID)
+        <br />
+        @Html.Label("Proje Başlığı")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
+        <br />
+        @Html.Label("Proje Görsel")
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ImageUrl)
+        <br />
+        @Html.Label("Proje Görsel ")
+        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+        <br />
+        @Html.Label("Platform")
+        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ücret")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Price)
+        <br />
+        @Html.Label("Durum")
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />
+        @Html.Label("Değer")
+        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-secondary">Kaydet</button>
+    }
+</div>
+

@@ -45,11 +45,45 @@ namespace Portfolio.NETCore.Controllers
                 foreach (var item in result.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                   
+
                 }
             }
-             return View();
+            return View();
         }
-       
+        public IActionResult DeletePortfolio(int id)
+        {
+            var values = portfolioManager.TGetByID(id);
+            portfolioManager.TDelete(values);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult EditPortfolio(int id)
+        {
+            ViewBag.v1 = "Düzenleme";
+            ViewBag.v2 = "Projelerim";
+            ViewBag.v3 = "Proje Güncelleme";
+            var values = portfolioManager.TGetByID(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult EditPortfolio(EntityLayer.Concrete.Portfolio portfolio)
+        {
+            PortfolioValidator validations = new PortfolioValidator();
+            ValidationResult result = validations.Validate(portfolio);
+            if (result.IsValid)
+            {
+                portfolioManager.TUpdate(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();            
+        }
+
     }
 }
