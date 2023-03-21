@@ -1,44 +1,54 @@
 ﻿@model EntityLayer.Concrete.Portfolio
 @{
     ViewData["Title"] = "AddPortfolio";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h1>Proje Ekleme  Sayfası</h1>
-    @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
-    {
-        @Html.Label("Proje Başlığı")
-        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.Name)
-        <br />
-        @Html.Label("Görsel 1")
-        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.ImageUrl)
-        <br />
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.PortfolioID)
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Proje Ekleme  Sayfası</h4>
+                <form class="forms-sample">
+                    <div class="form-group">
 
-        @Html.Label("Görsel 2")
-        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
-        <br />
-        @Html.Label("Proje Url")
-        @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
-        <br />
-        @Html.Label("PLatform")
-        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
-        <br />
-        @Html.Label("Ücret")
-        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.Price)
-        <br />
-        @Html.Label("Status")
-        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
-        <br />
-        @Html.Label("Tamamlanma Oranı")
-        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-primary"> Kaydet </button>
-    }
-</div>
+                        @Html.Label("Proje Başlığı")
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                    <div class="form-group">
 
+                        @Html.Label("Proje Görsel")
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ImageUrl)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Proje Görsel ")
+                        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Platform")
+                        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Ücret")
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Price)
+                    </div> <div class="form-group">
+                        @Html.Label("Durum")
+                        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+                    </div> <div class="form-group">
+                        @Html.Label("Değer")
+                        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
 
 
